@@ -26,30 +26,31 @@ image: "images/winter tofflor.jpg"
 },
 {
 name: "Presentation Jacket",
-price: 85,
+price: 80,
 image: "images/design presentation.jpg"
 },
 {
-name: "Suit Jacket",
-price: 150,
-image: "images/design suit.jpg"
+name: "Presentation Jacket 2",
+price: 90,
+image: "images/design present 2.jpg"
 },
 {
-name: "Scarf",
-price: 30,
-image: "images/design presentation 2.jpg"
+name: "Presentation Jacket 3",
+price: 100,
+image: "images/design presentation 3.jpg"
 }
 ];
 
-const productGrid = document.getElementById("productGrid");
+const grid = document.getElementById("productGrid");
 
-products.forEach((product) => {
+if (grid) {
 
-const productCard = document.createElement("div");
-productCard.className = "product";
+products.forEach(product => {
 
-productCard.innerHTML = `
-<img src="${product.image}" alt="${product.name}">
+const card = document.createElement("div");
+
+card.innerHTML = `
+<img src="${product.image}" width="200">
 <h3>${product.name}</h3>
 <p>$${product.price}</p>
 <button onclick="addToCart('${product.name}', ${product.price})">
@@ -57,6 +58,8 @@ Add to Cart
 </button>
 `;
 
-productGrid.appendChild(productCard);
+grid.appendChild(card);
 
 });
+
+}
